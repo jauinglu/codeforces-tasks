@@ -1,0 +1,59 @@
+#include <iostream>
+
+using namespace std;
+
+void solve()
+{
+	int n;
+	cin >> n;
+	
+	int temp = n;
+	int mult = 1;
+	int count = 0;
+	
+	while (temp)
+	{
+		if (temp % 10 != 0)
+		{
+			count++;
+		}
+		temp /= 10;
+	}
+	
+	cout << count << endl;
+	
+	temp = n;
+	bool first = true;
+	
+	while (temp > 0) 
+	{
+		int digit = temp % 10;
+		if (digit != 0) 
+		{
+			if (!first) 
+			{
+				cout << " ";
+			}
+			
+			cout << digit * mult;
+			first = false;
+		
+		}
+		temp /= 10;
+		mult*= 10;
+	}
+	cout << endl;
+}
+
+int main()
+{
+	int tt;
+	cin >> tt;
+
+	while (tt--)
+	{
+		solve();
+	}
+
+	return 0;
+}
