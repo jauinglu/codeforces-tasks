@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void solve()
+{
+    int x, y, a;
+    cin >> x >> y >> a;
+
+    int count = 0;
+    int turn = 1; 
+
+    while (count <= a)
+    {
+        if (turn == 1)
+        {
+            count += x;
+            if (count > a) break; 
+            turn = 2;
+        }
+        else
+        {
+            count += y;
+            if (count > a) break; 
+            turn = 1;
+        }
+    }
+
+    if (turn == 1)
+    {
+        cout << "NO" << endl;
+    }
+    else
+    {
+        cout << "YES" << endl;
+    }
+}
+
+int main()
+{
+    int tt;
+    cin >> tt;
+
+    while (tt--)
+    {
+        solve();
+    }
+
+    return 0;
+}
