@@ -49,3 +49,42 @@ int main()
 
     return 0;
 }
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 2-nd version: $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void solve()
+{
+    int x, y, a;
+    cin >> x >> y >> a;
+
+    int full_cycles = a / (x + y);
+    int remaining = a % (x + y);
+
+    if (remaining >= x) 
+    {
+        cout << "YES" << endl;
+    }
+    else 
+    {
+        cout << "NO" << endl;
+    }
+}
+
+int main()
+{
+    int tt;
+    cin >> tt;
+
+    while (tt--)
+    {
+        solve();
+    }
+
+    return 0;
+}
+
