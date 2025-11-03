@@ -1,0 +1,59 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int main() 
+{
+    vector<int> sticks(4);
+
+    for (int i = 0; i < 4; i++) 
+    {
+        cin >> sticks[i];
+    }
+    
+    sort(sticks.begin(), sticks.end());
+
+    bool triangle = false;
+    bool segment = false;
+
+   
+    for (int i = 0; i < 4; i++) 
+    {
+        for (int j = i + 1; j < 4; j++) 
+        {
+            for (int k = j + 1; k < 4; k++) 
+            {
+                int a = sticks[i];
+                int b = sticks[j];
+                int c = sticks[k];
+            
+                if (a + b > c && a + c > b && b + c > a) 
+                {
+                    triangle = true;
+                }
+                
+                else if (a + b == c || a + c == b || b + c == a) 
+                {
+                    segment = true;
+                }
+            }
+        }
+    }
+
+    if (triangle) 
+    {
+        cout << "TRIANGLE" << endl;
+    }
+    else if (segment) 
+    {
+        cout << "SEGMENT" << endl;
+    }
+    else 
+    {
+        cout << "IMPOSSIBLE" << endl;
+    }
+
+    return 0;
+}
