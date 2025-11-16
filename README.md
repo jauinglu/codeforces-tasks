@@ -1,1 +1,1 @@
-There are codeforces tasks that i solved.
+There are some Codeforces tasks that I have solved.
